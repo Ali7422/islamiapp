@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/core/constant/app_assets.dart';
+import 'package:islami/core/layout/Quran/widgets/history_widget.dart';
 import 'package:islami/core/layout/Quran/widgets/quran_Card_widget.dart';
 import 'package:islami/core/theme/app_colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -388,11 +389,15 @@ class _quranscreenState extends State<quranscreen> {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
     return Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(AppAssets.quranbg), fit: BoxFit.cover)),
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: AssetImage(
+            AppAssets.quranbg,
+          ),
+        ),
+      ),
       child: Container(
         padding: EdgeInsets.all(12),
         width: double.infinity,
@@ -432,13 +437,25 @@ class _quranscreenState extends State<quranscreen> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
             if (ids.isNotEmpty)
               SizedBox(
-                height: 10,
+                height: 140,
+                child: ListView.builder(
+                  itemCount: ids.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return HistoryWidget(
+                        suraData: SuraData(
+                            suraAr: suraNameAr[ids[index]],
+                            suraEn: suraNameEn[ids[index]],
+                            index: ids[index],
+                            ayaNum: ayaNumber[ids[index]]));
+                  },
+                ),
               ),
+            SizedBox(
+              height: 10 ,
+            ),
             Text(
               "Suras List",
               style: TextStyle(

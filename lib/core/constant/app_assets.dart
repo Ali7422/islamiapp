@@ -8,6 +8,7 @@ class AppAssets{
   static const String adhanicon="assets/icons/adhan.png";
   static const String suraicon="assets/icons/Suraicon.png";
   static const String quranbg="assets/images/quranbg.png";
+  static const String hadethbg="assets/images/hadethBg.png";
   static const String homelogo="assets/logo/home_logo.png";
   static const String suraDetailsRight="assets/images/suradetailsright.png";
   static const String suraDetailsLift="assets/images/suradetailsleft.png";

@@ -56,7 +56,9 @@ class HistoryWidget extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(width: 10,),
+            SizedBox(
+              width: 10,
+            ),
             Image.asset( AppAssets.historyphoto, height: 150),
           ],
         ),
@@ -64,3 +66,4 @@ class HistoryWidget extends StatelessWidget {
     );
   }
 }
+
