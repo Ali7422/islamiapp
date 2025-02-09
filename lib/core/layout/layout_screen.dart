@@ -18,9 +18,9 @@ class _layoutScreenState extends State<layoutScreen> {
   int selectedIndex=0;
   List<Widget> screens= [
     quranscreen(),
-    hadethscreen(),
+    HadethScreen(),
     sebhascreen(),
-    radioscreen(),
+    RadioScreen(),
     adhanscreen(),
   ];
   @override
@@ -52,8 +52,7 @@ class _layoutScreenState extends State<layoutScreen> {
             padding: EdgeInsets.symmetric(
               horizontal: 10,
               vertical: 4,
-            )
-            ,
+            ),
             decoration: BoxDecoration(
 
                 borderRadius: BorderRadius.circular(16),
